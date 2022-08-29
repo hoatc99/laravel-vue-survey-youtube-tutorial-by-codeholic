@@ -1,0 +1,54 @@
+Setup Laravel Project
+	0:17:47 - composer global require laravel/installer
+	0:17:52 - laravel new laravel-vue-survey
+	0:19:07 - php artisan serve
+	0:19:23 - php artisan migrate
+
+Setup Vuejs Project
+	0:21:19 - npm init vite vue
+	0:21:40 - cd vue
+	0:21:42 - npm install && npm run dev
+
+Setup Vuex
+	0:22:00 - npm install -S vuex@next
+	0:22:09 - npm run dev
+	
+Add Tailwindcss
+	0:24:28 - npm install -D tailwindcss postcss autoprefixer
+	0:24:41 - npx tailwindcss init -p
+	0:25:17 - npm install @headlessui/vue @heroicons/vue @tailwindcss/forms -S
+	0:25:29 - npm run dev
+	
+Add Vue Router
+	0:26:09 - npm install -S vue-router@next
+	0:27:08 - npm run dev
+	
+Generate Migrations
+	0:50:52 - php artisan make:model Survey -m
+	0:51:05 - php artisan make:model SurveyQuestion -m
+	0:51:12 - php artisan make:model SurveyAnswer -m
+	0:51:16 - php artisan make:model SurveyQuestionAnswer -m
+	0:53:35 - php artisan migrate
+
+Login on Frontend
+	1:09:47 - npm install -S axios
+	
+Laravel Survey CRUD
+	2:02:08 - php artisan make:controller SurveyController --model=Survey --api --requests
+	2:02:49 - php artisan make:resource SurveyResource
+	2:03:30 - composer require spatie/laravel-sluggable
+	
+Add Image to Survey
+	2:16:27 - php artisan make:migration add_image_column_to_surveys_table
+	...		- php artisan migrate:rollback
+	2:17:05 - php artisan migrate
+	
+Unknown
+	...		- php artisan make:resource SurveyQuestionResource
+	
+Implement Saving Answers
+	4:04:24 - php artisan make:request StoreSurveyAnswerRequest
+
+Implement Dashboard
+	4:12:33 - php artisan make:controller DashboardController
+	4:15:43 - php artisan make:resource SurveyAnswerResource
